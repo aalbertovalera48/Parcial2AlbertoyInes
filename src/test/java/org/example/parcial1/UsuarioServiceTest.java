@@ -1,5 +1,8 @@
 package org.example.parcial1;
 
+import Data.Usuario;
+import Services.UsuarioService;
+import Exceptions.UsuarioServiceException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package org.example.parcial1;
+package Controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

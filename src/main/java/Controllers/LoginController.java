@@ -1,10 +1,19 @@
-package org.example.parcial1;
+package Controllers;
 
+import Data.LoginData;
+import Data.ManagerUserSession;
+import Data.RegistroData;
+import Data.Usuario;
+import Services.UsuarioService;
+import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 
 @Controller
@@ -62,13 +71,13 @@ public class LoginController {
             return "formRegistro";
         }
 
-        if (usuarioService.findByEmail(registroData.geteMail()) != null) {
+        if (usuarioService.findByEmail(registroData.getEmail()) != null) {
             model.addAttribute("registroData", registroData);
-            model.addAttribute("error", "El usuario " + registroData.geteMail() + " ya existe");
+            model.addAttribute("error", "El usuario " + registroData.getEmail() + " ya existe");
             return "formRegistro";
         }
 
-        Usuario usuario = new Usuario(registroData.geteMail());
+        Usuario usuario = new Usuario(registroData.getEmail());
         usuario.setPassword(registroData.getPassword());
         usuario.setFechaNacimiento(registroData.getFechaNacimiento());
         usuario.setNombre(registroData.getNombre());

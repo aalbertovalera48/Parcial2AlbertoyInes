@@ -1,5 +1,6 @@
-package org.example.parcial1;
+package Data;
 
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

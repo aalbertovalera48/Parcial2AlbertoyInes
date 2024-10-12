@@ -1,4 +1,4 @@
-package org.example.parcial1;
+package Data;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;

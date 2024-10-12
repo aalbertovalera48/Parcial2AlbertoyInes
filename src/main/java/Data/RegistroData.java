@@ -1,4 +1,4 @@
-package org.example.parcial1;
+package Data;
 
 import jakarta.validation.constraints.Email;
 import org.springframework.format.annotation.DateTimeFormat;

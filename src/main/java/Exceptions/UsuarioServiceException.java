@@ -1,4 +1,4 @@
-package org.example.parcial1;
+package Exceptions;
 
 public class UsuarioServiceException extends RuntimeException {
 

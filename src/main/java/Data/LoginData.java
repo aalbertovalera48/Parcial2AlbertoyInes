@@ -1,4 +1,4 @@
-package org.example.parcial1;
+package Data;
 
 public class LoginData {
     private String eMail;
