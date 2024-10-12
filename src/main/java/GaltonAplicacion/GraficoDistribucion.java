@@ -1,4 +1,4 @@
-package Galton;
+package GaltonAplicacion;
 
 import javax.swing.*;
 import java.awt.*;

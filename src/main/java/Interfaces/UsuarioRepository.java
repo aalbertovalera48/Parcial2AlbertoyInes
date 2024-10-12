@@ -1,5 +1,6 @@
-package org.example.parcial1;
+package Interfaces;
 
+import Data.Usuario;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.Optional;

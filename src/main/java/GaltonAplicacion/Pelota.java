@@ -1,4 +1,4 @@
-package Galton;
+package GaltonAplicacion;
 
 import java.awt.*;
 import java.util.Random;

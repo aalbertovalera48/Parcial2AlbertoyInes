@@ -1,4 +1,4 @@
-package org.example.parcial1;
+package Interfaces;
 
 import org.springframework.data.repository.Repository;
 
