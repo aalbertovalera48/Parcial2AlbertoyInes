@@ -1,10 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulación del Tablero de Galton</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    #grafico {
+      width: 600px;
+      height: 200px;
+      background-color: #f0f0f0;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .barra {
+      position: absolute;
+      bottom: 0;
+      background-color: blue;
+      border: 1px solid black;
+    }
+  </style>
 </head>
 <body>
-$END$
+<h1>Simulación del Tablero de Galton</h1>
+<button id="simularBtn">Simular 1000 bolas</button>
+<div id="grafico"></div>
+
+<script>
+  $(document).ready(function () {
+    $('#simularBtn').click(function () {
+      $.get('/simular?numBalls=1000', function (data) {
+        $('#grafico').empty();
+        let maxVal = Math.max(...data); // Encontrar el valor máximo
+        data.forEach((count, index) => {
+          let height = (count / maxVal) * 200; // Calcular la altura proporcional
+          let barra = $('<div class="barra"></div>').css({
+            left: (index * (600 / data.length)) + 'px',
+            width: (600 / data.length) + 'px',
+            height: height + 'px'
+          });
+          $('#grafico').append(barra);
+        });
+      });
+    });
+  });
+</script>
 </body>
 </html>
