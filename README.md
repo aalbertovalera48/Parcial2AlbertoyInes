@@ -1,3 +1,6 @@
+Título: La Operación de Galton en la Fábrica de Campanas de Gauss
+Hecho por Alberto Valera y Inés Elena Gómez 
+
 El proyecto se separa por una carpeta java y una resources:
 En la carpeta java 9 packages :
 ## CampanaGauss
