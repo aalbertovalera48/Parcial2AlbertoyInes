@@ -32,12 +32,12 @@ En la carpeta java 9 packages :
        - Inicio de Sesión (Login)
            - GET /login: Muestra el formulario de inicio de sesión.
            - POST /login: Valida las credenciales del usuario utilizando UsuarioService.
-           - Dependiendo del resultado, redirige al usuario a su página personal o muestra un                error si la autenticación falla.
+           - Dependiendo del resultado, redirige al usuario a su página personal o muestra un error si la autenticación falla.
         - Registro de Usuario
             - GET /registro: Muestra el formulario de registro de usuario.
-            - POST /registro: Procesa el registro de un nuevo usuario, validando los datos                    ingresados y asegurando que no exista ya un usuario con el mismo email en el                    sistema. 
+            - POST /registro: Procesa el registro de un nuevo usuario, validando los datos ingresados y asegurando que no exista ya un usuario con el mismo email en el sistema. 
         - Cierre de Sesión (Logout)
-            - GET /logout: Cierra la sesión del usuario y redirige a la página de inicio de                   sesión.
+            - GET /logout: Cierra la sesión del usuario y redirige a la página de inicio de sesión.
 
 ## Data
 
@@ -77,11 +77,11 @@ En la carpeta java 9 packages :
   
 ### SimulacionGalton
 - Esta es la clase principal que configura el entorno gráfico y coordina la simulación.
-    - ExecutorService: Permite ejecutar múltiples bolas concurrentemente utilizando hilos para        simular la caída en paralelo.
-    - TableroGalton y GraficoDistribucion: Se integran en una interfaz gráfica que muestra el         tablero y el histograma de la distribución de bolas.
+    - ExecutorService: Permite ejecutar múltiples bolas concurrentemente utilizando hilos para simular la caída en paralelo.
+    - TableroGalton y GraficoDistribucion: Se integran en una interfaz gráfica que muestra el tablero y el histograma de la distribución de bolas.
 ### TableroGalton
 - El TableroGalton es el componente gráfico que dibuja los clavos del tablero, muestra las bolas mientras caen y contiene los contenedores donde se acumulan las bolas.
-    - addBallPosition(Point position): Almacena las posiciones de las bolas mientras caen,            permitiendo que se dibujen en tiempo real.
+    - addBallPosition(Point position): Almacena las posiciones de las bolas mientras caen, permitiendo que se dibujen en tiempo real.
     - addToBin(int bin): Actualiza el contenedor donde cae la bola al final de su trayectoria.
       
 ## GaltonSpringBoot
@@ -131,8 +131,8 @@ En la carpeta java 9 packages :
           - ERROR_PASSWORD: Indica que la contraseña es incorrecta
        
       - login(String eMail, String password)
-        - Descripción: Permite a un usuario iniciar sesión utilizando su correo electrónico y            contraseña.
-        - Transacción: Marcado como @Transactional(readOnly = true), ya que solo realiza                 operaciones de lectura.
+        - Descripción: Permite a un usuario iniciar sesión utilizando su correo electrónico y contraseña.
+        - Transacción: Marcado como @Transactional(readOnly = true), ya que solo realiza operaciones de lectura.
         - Flujo:
             - Busca al usuario en la base de datos por su correo electrónico.
             - Verifica si el usuario existe y si la contraseña coincide.
@@ -154,13 +154,13 @@ En la carpeta java 9 packages :
 
 ## Data
 -  Este directorio contiene archivos relacionados con la gestión y el modelo de datos de la aplicación.
-- `RegistroData`: Clase que representa los datos de registro de un usuario.
+- RegistroData: Clase que representa los datos de registro de un usuario.
 
 ### Archivos
 
-### `data.sql`
+### data.sql
 
-Este archivo contiene sentencias SQL para poblar las tablas de la base de datos con datos iniciales. Actualmente, inserta un usuario de ejemplo en la tabla `usuarios`.
+Este archivo contiene sentencias SQL para poblar las tablas de la base de datos con datos iniciales. Actualmente, inserta un usuario de ejemplo en la tabla usuarios.
 
 ### Contenido Ejemplo:
 
@@ -185,13 +185,13 @@ Este directorio contiene varios recursos utilizados por la aplicación, incluyen
 
 ## Configuración
 
-### `application.properties`
+### application.properties
 
 Este archivo contiene varias configuraciones para la aplicación Spring Boot, como detalles de conexión a la base de datos, niveles de registro y configuraciones de Thymeleaf.
 
 ### Plantillas Thymeleaf
 
-El directorio `templates` contiene plantillas Thymeleaf utilizadas para renderizar vistas HTML. Cada plantilla corresponde a una página o componente específico de la aplicación.
+El directorio templates contiene plantillas Thymeleaf utilizadas para renderizar vistas HTML. Cada plantilla corresponde a una página o componente específico de la aplicación.
 
 ## Uso
 
@@ -201,6 +201,3 @@ El directorio `templates` contiene plantillas Thymeleaf utilizadas para renderiz
 - **Página de Simulación**: La plantilla de la página de simulación (`simulacion.html`) se utiliza para mostrar la simulación del tablero de Galton.
 - **Página de Error**: La plantilla de la página de error (`error.html`) se utiliza para mostrar mensajes de error al usuario.
 
-
-  
-URL :   https://github.com/aalbertovalera48/Parcial1AlbertoyInes.git
