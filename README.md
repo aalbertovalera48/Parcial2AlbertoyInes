@@ -1,5 +1,5 @@
-Este proyecto lo hemnos separado en 9 packages 
-El primero es:
+El proyecto se separa por una carpeta java y una resources:
+En la carpeta java 9 packages :
 ## CampanaGauss
 ### Clase Componente 
 - Clase que modela un componente producido por las estaciones de trabajo.
@@ -146,4 +146,11 @@ El primero es:
             - Verifica si el usuario ya está registrado.
             - Lanza una excepción UsuarioServiceException si el registro no es válido.
             - Guarda el usuario en la base de datos.
+           
+Y en la carpeta resources tenemos 2 directorios: Data y templates
+## Data
+## templates
+- login.html
+- registro.html
+- simulacion.html
 URL :   https://github.com/aalbertovalera48/Parcial1AlbertoyInes.git
