@@ -1,4 +1,4 @@
-package org.example.parcial1.PantallaLogin;
+package org.example.parcial1;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,6 +8,7 @@ public class Parcial1Application {
 
     public static void main(String[] args) {
         SpringApplication.run(Parcial1Application.class, args);
+
     }
 
 }

@@ -133,7 +133,7 @@
                     <configuration>
                         <archive>
                             <manifest>
-                                <mainClass>org.example.parcial1.PantallaLogin.Parcial1Application</mainClass> <!-- Cambia esto al nombre de tu clase principal -->
+                                <mainClass>org.example.parcial1.Parcial1Application</mainClass> <!-- Cambia esto al nombre de tu clase principal -->
                             </manifest>
                         </archive>
                     </configuration>

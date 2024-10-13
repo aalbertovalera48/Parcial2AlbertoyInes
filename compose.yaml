@@ -1,10 +1,11 @@
 services:
   app:
     image: app-image
+    container_name: parcial1-app
     build:
       context: .
       dockerfile: Dockerfile  # Asegúrate de que solo esté el nombre del archivo aquí
     ports:
       - "8080:8080"
     volumes:
-      - "//C/Users/Albeto/Parcial1/identifier.sqlite:/app/identifier.sqlite"
+      - "/c/Users/Albeto/Parcial1/identifier.sqlite:/app/identifier.sqlite"
