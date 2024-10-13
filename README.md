@@ -1,6 +1,6 @@
 # Título: La Operación de Galton en la Fábrica de Campanas de Gauss
 ## Hecho por Alberto Valera y Inés Elena Gómez 
-## Link repositorio GitGub: https://github.com/aalbertovalera48/Parcial1AlbertoyInes.git
+### Link repositorio GitGub: https://github.com/aalbertovalera48/Parcial1AlbertoyInes.git
 
 El proyecto se separa por una carpeta java y una resources:
 En la carpeta java 9 packages :
