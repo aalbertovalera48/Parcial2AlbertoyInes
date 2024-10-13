@@ -52,26 +52,99 @@ El primero es:
 - Usuario es la entidad principal que representa a los usuarios de la aplicación en la base de datos.
 
 ## Exceptions
+. Este paquete contiene excepciones personalizadas que son utilizadas en la aplicación para manejar errores específicos relacionados con los usuarios y el servicio de usuarios. 
 ### UsuarioNoLogeadoException
+- Esta excepción se utiliza cuando un usuario intenta acceder a recursos o ejecutar acciones sin haber iniciado sesión en la aplicación
+-  Está anotada con @ResponseStatus para retornar un código de estado HTTP 401 Unauthorized junto con un mensaje personalizado.
+    - HttpStatus.UNAUTHORIZED: Esta excepción retorna un código de estado 401, lo que indica que el usuario no está autorizado para realizar la solicitud.
+    - Mensaje personalizado: Se muestra el mensaje "Usuario no autorizado" cuando se lanza la excepción.
 ### UusarioServiceException
-
+- UsuarioServiceException es una excepción personalizada que puede ser lanzada por la capa de servicios cuando se produce un error relacionado con el manejo de usuarios.
+- Esta excepción hereda de RuntimeException y permite incluir un mensaje descriptivo sobre el error.
 ## GaltonAplicacion
+- Este proyecto implementa una simulación visual del Tablero de Galton usando Java y Swing
+-  La simulación permite visualizar cómo las bolas caen a través de un tablero de clavos, con un gráfico de distribución que se actualiza dinámicamente para mostrar cómo las bolas se acumulan en contenedores al final.
 ### GraficoDistrobucion
+- Esta clase es un componente gráfico personalizado que muestra un histograma con la cantidad de bolas que han caído en cada contenedor.
+- Utiliza barras verticales de color azul para representar la acumulación de bolas.
+  
 ### Pelota
+- La clase Pelota simula el comportamiento de una bola individual al caer por el tablero de Galton.
+- La bola se mueve hacia la izquierda o la derecha de manera aleatoria en cada fila de clavos.
+  
 ### SimulacionGalton
+- Esta es la clase principal que configura el entorno gráfico y coordina la simulación.
+    - ExecutorService: Permite ejecutar múltiples bolas concurrentemente utilizando hilos para        simular la caída en paralelo.
+    - TableroGalton y GraficoDistribucion: Se integran en una interfaz gráfica que muestra el         tablero y el histograma de la distribución de bolas.
 ### TableroGalton
-
+- El TableroGalton es el componente gráfico que dibuja los clavos del tablero, muestra las bolas mientras caen y contiene los contenedores donde se acumulan las bolas.
+    - addBallPosition(Point position): Almacena las posiciones de las bolas mientras caen,            permitiendo que se dibujen en tiempo real.
+    - addToBin(int bin): Actualiza el contenedor donde cae la bola al final de su trayectoria.
+      
 ## GaltonSpringBoot
+- Este paquete implementa una versión de la simulación del Tablero de Galton utilizando Spring Boot para ofrecer una interfaz web que simula la caída de bolas en el tablero.
+  
 ### Pelota1
+- Esta clase implementa el comportamiento de una bola en el tablero de Galton.
+- Cada vez que se ejecuta una instancia de esta clase, simula la caída de una bola y la coloca en uno de los contenedores del tablero.
+  
 ### SimulacionController
+- El SimulacionController es un controlador Spring que maneja las solicitudes HTTP y coordina la simulación.
+  
 ### TableroGalton1
+- El TableroGalton1 representa el tablero de Galton donde las bolas caen y se acumulan en contenedores.
+- Usa un generador aleatorio para simular el desplazamiento de las bolas a través de las filas de clavos.
 
 ## Interfaces
+- Se basa en el patrón de diseño de repositorio, que proporciona una forma de abstraer la lógica de acceso a datos de la lógica de negocio.
+  
 ### CrudRepository
+- La interfaz CrudRepository extiende la interfaz Repository de Spring Data.
+- Esta interfaz define las operaciones básicas de creación, lectura, actualización y eliminación (CRUD) para las entidades.
+  
 ### UsuarioRepository
-
+- La interfaz UsuarioRepository extiende CrudRepository y está especializada para trabajar con la entidad Usuario.
+- Define métodos específicos para la gestión de usuarios, como la búsqueda por correo electrónico.
+  
 ## org.example.parcial1
+- Este paquete contiene la clase principal de la aplicación Spring Boot.
+- Esta clase es el punto de entrada que inicia la aplicación, configurando el contexto de Spring y comenzando a escuchar las solicitudes en el servidor.
 ### Parcial1Application
+- La clase Parcial1Application está anotada con @SpringBootApplication, lo que indica que es una clase de configuración de Spring Boot.
 
 ## Services
+- Este paquete contiene la clase UsuarioService, que maneja la lógica de negocio relacionada con los usuarios de la aplicación.
+- Esta clase se encarga de gestionar el registro, inicio de sesión y búsqueda de usuarios en la base de datos.
+  
 ### UsuarioService
+- Atributos
+    - usuarioRepository: Interfaz que proporciona métodos para interactuar con la base de datos para operaciones relacionadas con el objeto Usuario.
+    - Se inyecta mediante la anotación @Autowired.
+- Métodos
+    - Enum LoginStatus
+      - Define el estado del inicio de sesión:
+          - LOGIN_OK: Indica que el inicio de sesión fue exitoso.
+          - USER_NOT_FOUND: Indica que no se encontró el usuario.
+          - ERROR_PASSWORD: Indica que la contraseña es incorrecta
+       
+      - login(String eMail, String password)
+        - Descripción: Permite a un usuario iniciar sesión utilizando su correo electrónico y            contraseña.
+        - Transacción: Marcado como @Transactional(readOnly = true), ya que solo realiza                 operaciones de lectura.
+        - Flujo:
+            - Busca al usuario en la base de datos por su correo electrónico.
+            - Verifica si el usuario existe y si la contraseña coincide.
+            - Devuelve el estado del inicio de sesión.
+         
+      - registrar(Usuario usuario)
+          - Descripción: Registra un nuevo usuario en la aplicación.
+          - Transacción: Marcado como @Transactional para permitir operaciones de escritura.
+          - Requisitos
+            - El correo electrónico y la contraseña no deben ser nulos.
+            - El correo electrónico no debe estar ya registrado.
+           
+          - Flujo
+            - Verifica si el usuario ya está registrado.
+            - Lanza una excepción UsuarioServiceException si el registro no es válido.
+            - Guarda el usuario en la base de datos.
+
+  
