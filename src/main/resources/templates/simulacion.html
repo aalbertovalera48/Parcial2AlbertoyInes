@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Simulación</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <style>
+        #grafico {
+            width: 600px;
+            height: 200px;
+            background-color: #f0f0f0;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .barra {
+            position: absolute;
+            bottom: 0;
+            background-color: blue;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<h1>Simulación del Tablero de Galton</h1>
+<button id="simularBtn">Simular 1000 bolas</button>
+<div id="grafico"></div>
+
+<script>
+    $(document).ready(function () {
+        $('#simularBtn').click(function () {
+            $.get('/simular?numBalls=1000', function (data) {
+                $('#grafico').empty();
+                let maxVal = Math.max(...data);
+                data.forEach((count, index) => {
+                    let height = (count / maxVal) * 200;
+                    let barra = $('<div class="barra"></div>').css({
+                        left: (index * (600 / data.length)) + 'px',
+                        width: (600 / data.length) + 'px',
+                        height: height + 'px'
+                    });
+                    $('#grafico').append(barra);
+                });
+            });
+        });
+    });
+</script>
+</body>
+</html>
