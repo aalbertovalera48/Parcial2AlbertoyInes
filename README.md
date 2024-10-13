@@ -153,4 +153,6 @@ Y en la carpeta resources tenemos 2 directorios: Data y templates
 - login.html
 - registro.html
 - simulacion.html
+
+  
 URL :   https://github.com/aalbertovalera48/Parcial1AlbertoyInes.git
