@@ -151,7 +151,7 @@ En la carpeta java 9 packages :
             - Lanza una excepción UsuarioServiceException si el registro no es válido.
             - Guarda el usuario en la base de datos.
            
-## En la carpeta Resources tenemos 2 directorios: Data y templates
+### En la carpeta Resources tenemos 2 directorios: Data y templates
 
 ## Data
 -  Este directorio contiene archivos relacionados con la gestión y el modelo de datos de la aplicación.
@@ -194,7 +194,7 @@ Este archivo contiene varias configuraciones para la aplicación Spring Boot, co
 
 El directorio templates contiene plantillas Thymeleaf utilizadas para renderizar vistas HTML. Cada plantilla corresponde a una página o componente específico de la aplicación.
 
-## Uso
+### Uso
 
 - **Página de Inicio**: La plantilla de la página de inicio (`home.html`) se utiliza para mostrar la página principal de la aplicación.
 - **Página de Inicio de Sesión**: La plantilla de la página de inicio de sesión (`login.html`) se utiliza para la autenticación de usuarios.
