@@ -147,12 +147,57 @@ En la carpeta java 9 packages :
             - Lanza una excepción UsuarioServiceException si el registro no es válido.
             - Guarda el usuario en la base de datos.
            
-Y en la carpeta resources tenemos 2 directorios: Data y templates
+## En la carpeta Resources tenemos 2 directorios: Data y templates
+
 ## Data
+-  Este directorio contiene archivos relacionados con la gestión y el modelo de datos de la aplicación.
+- `RegistroData`: Clase que representa los datos de registro de un usuario.
+
+### Archivos
+
+### `data.sql`
+
+Este archivo contiene sentencias SQL para poblar las tablas de la base de datos con datos iniciales. Actualmente, inserta un usuario de ejemplo en la tabla `usuarios`.
+
+### Contenido Ejemplo:
+
+### SQL
+INSERT INTO usuarios (id, email, nombre, password, fecha_nacimiento) VALUES('1', 'user@ua', 'Data.Usuario Ejemplo', '123', '2001-02-10');
+
 ## templates
-- login.html
-- registro.html
-- simulacion.html
+Este directorio contiene varios recursos utilizados por la aplicación, incluyendo archivos de configuración, plantillas y activos estáticos.
+
+### Estructura
+
+- `application.properties`: Archivo de configuración para la aplicación Spring Boot.
+- `templates/`: Directorio que contiene plantillas Thymeleaf para renderizar vistas HTML.
+- `error.html`: Plantilla para mostrar mensajes de error.
+- `fragments.html`: Plantilla que contiene fragmentos HTML reutilizables.
+- `home.html`: Plantilla para la página de inicio.
+- `login.html`: Plantilla para la página de inicio de sesión.
+- `registro.html`: Plantilla para la página de registro.
+- `simulacion.html`: Plantilla para la página de simulación.
+- `jquery.min.js`: Biblioteca jQuery.
+  
+
+## Configuración
+
+### `application.properties`
+
+Este archivo contiene varias configuraciones para la aplicación Spring Boot, como detalles de conexión a la base de datos, niveles de registro y configuraciones de Thymeleaf.
+
+### Plantillas Thymeleaf
+
+El directorio `templates` contiene plantillas Thymeleaf utilizadas para renderizar vistas HTML. Cada plantilla corresponde a una página o componente específico de la aplicación.
+
+## Uso
+
+- **Página de Inicio**: La plantilla de la página de inicio (`home.html`) se utiliza para mostrar la página principal de la aplicación.
+- **Página de Inicio de Sesión**: La plantilla de la página de inicio de sesión (`login.html`) se utiliza para la autenticación de usuarios.
+- **Página de Registro**: La plantilla de la página de registro (`registro.html`) se utiliza para el registro de nuevos usuarios.
+- **Página de Simulación**: La plantilla de la página de simulación (`simulacion.html`) se utiliza para mostrar la simulación del tablero de Galton.
+- **Página de Error**: La plantilla de la página de error (`error.html`) se utiliza para mostrar mensajes de error al usuario.
+
 
   
 URL :   https://github.com/aalbertovalera48/Parcial1AlbertoyInes.git
