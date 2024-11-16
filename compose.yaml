@@ -4,8 +4,10 @@ services:
     container_name: parcial1-app
     build:
       context: .
-      dockerfile: Dockerfile  # Asegúrate de que solo esté el nombre del archivo aquí
+      dockerfile: Dockerfile
     ports:
       - "8080:8080"
     volumes:
       - "/c/Users/Albeto/Parcial1/identifier.sqlite:/app/identifier.sqlite"
+    environment:
+      - SPRING_PROFILES_ACTIVE=prod

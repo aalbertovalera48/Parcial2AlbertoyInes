@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Visualización en Tiempo Real</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const eventSource = new EventSource("/visualizacion");
+            eventSource.onmessage = function(event) {
+                const newElement = document.createElement("div");
+                newElement.innerText = event.data;
+                document.getElementById("contenedor").appendChild(newElement);
+            };
+        });
+    </script>
+</head>
+<body>
+<h1>Visualización en Tiempo Real</h1>
+<div id="contenedor"></div>
+</body>
+</html>
