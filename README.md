@@ -10,7 +10,7 @@ Este proyecto simula la operación de una fábrica utilizando un tablero de Galt
 
 ## Directorios y Clases
 
-### `CampanaGauss`
+## `CampanaGauss`
 Este paquete contiene las clases relacionadas con la producción y visualización de componentes.
 
 #### `Componente`
@@ -39,7 +39,7 @@ Esta clase implementa una interfaz gráfica que muestra la distribución en tiem
 - **paintComponent(Graphics g)**: Dibuja los contenedores y la distribución de componentes.
 - **actualizarDistribucion(int contenedor)**: Actualiza la cantidad de componentes en un contenedor específico.
 
-### `GaltonSpringBoot`
+## `GaltonSpringBoot`
 Este paquete implementa una versión de la simulación del Tablero de Galton utilizando Spring Boot para ofrecer una interfaz web.
 
 #### `Pelota1`
@@ -47,28 +47,28 @@ Simula el comportamiento de una bola en el tablero de Galton.
 - **Pelota1(TableroGalton1 board)**: Constructor que recibe el tablero de Galton.
 - **run()**: Simula la caída de una bola y actualiza el contenedor correspondiente en el tablero.
 
-### `Exceptions`
+## `Exceptions`
 Este paquete contiene excepciones personalizadas que son utilizadas en la aplicación para manejar errores específicos relacionados con los usuarios y el servicio de usuarios.
 
 #### `UsuarioNoLogeadoException`
 Excepción que se lanza cuando un usuario no autorizado intenta acceder a recursos protegidos.
 - **UsuarioNoLogeadoException()**: Constructor de la excepción.
 
-### `GaltonAplicacion`
+## `GaltonAplicacion`
 Este paquete contiene la clase principal de la aplicación que configura y ejecuta la simulación del tablero de Galton.
 
 #### `SimulacionGalton`
 Configura y ejecuta la simulación del tablero de Galton con bolas cayendo en contenedores.
 - **main(String[] args)**: Configura y ejecuta la simulación del tablero de Galton con bolas cayendo en contenedores.
 
-### `org.example.parcial1`
+## `org.example.parcial1`
 Este paquete contiene la clase principal de la aplicación Spring Boot.
 
 #### `Parcial1Application`
 Clase principal anotada con `@SpringBootApplication` que inicia la aplicación.
 - **Parcial1Application()**: Constructor de la clase principal.
 
-### `Services`
+## `Services`
 Este paquete contiene la clase `UsuarioService`, que maneja la lógica de negocio relacionada con los usuarios de la aplicación.
 
 #### `UsuarioService`
@@ -76,7 +76,7 @@ Maneja la lógica de negocio relacionada con los usuarios de la aplicación.
 - **login(String eMail, String password)**: Permite a un usuario iniciar sesión utilizando su correo electrónico y contraseña.
 - **registrar(Usuario usuario)**: Registra un nuevo usuario en la aplicación.
 
-### `Controllers`
+## `Controllers`
 Este paquete contiene un conjunto de controladores basados en Spring Boot que gestionan la funcionalidad de autenticación de usuarios, registro y la redirección de rutas dentro de la aplicación web.
 
 #### `HomeController`
@@ -93,7 +93,7 @@ Gestiona las rutas y lógica relacionadas con el inicio de sesión, registro de 
 - **registroSubmit()**: Procesa el registro de un nuevo usuario.
 - **logout()**: Cierra la sesión del usuario.
 
-### `Interfaces`
+## `Interfaces`
 Este paquete se basa en el patrón de diseño de repositorio, que proporciona una forma de abstraer la lógica de acceso a datos de la lógica de negocio.
 
 #### `CrudRepository`
