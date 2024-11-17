@@ -119,11 +119,32 @@ En la carpeta java 10 packages :
 ## Parcial2
 
 ### PelotaConsumer
+Consume mensajes de la cola de RabbitMQ y actualiza la distribución de las bolas.
+- **consumeMessage(String message)**: Consume un mensaje de la cola `simulacionQueue` y actualiza la distribución de las bolas.
+- **updateDistribution(int bin)**: Actualiza la distribución de las bolas en los contenedores.
+  
 ### PelotaProducer
+Produce y envía mensajes a la cola de RabbitMQ.
+- **sendBallMessage(int ballNumber)**: Envía un mensaje con el número de bola a la cola `simulacionQueue`.
+  
 ### SimulacionController
+- Controlador REST que inicia la simulación enviando mensajes a la cola de RabbitMQ.
+- **simular(int numBalls)**: Endpoint que inicia la simulación enviando el número especificado de bolas a la cola `simulacionQueue`.
+  
 ### SimulacionGaltonVista
+Clase principal que configura y ejecuta la simulación gráfica.
+- **main(String[] args)**: Método principal que inicia la aplicación y configura la interfaz gráfica.
+- **simularCaidaBola()**: Simula la caída de una bola y determina en qué contenedor cae.
+  
 ### VisualizacionController
+Controlador REST que proporciona un flujo de eventos de la caída de bolas.
+- **streamBolas()**: Endpoint que proporciona un flujo de eventos de la caída de bolas en formato `text/event-stream`.
+
 ### VisualizacionDistribucion 
+Panel de Swing que muestra la distribución de las bolas en los contenedores en tiempo real.
+- **VisualizacionDistribucion()**: Constructor que inicializa el gráfico con 11 contenedores.
+- **actualizarDistribucion(int bin)**: Actualiza la distribución de las bolas en los contenedores y repinta el gráfico.
+- **paintComponent(Graphics g)**: Dibuja el gráfico de barras que representa la distribución de las bolas.
 
 ## Services
 - Este paquete contiene la clase UsuarioService, que maneja la lógica de negocio relacionada con los usuarios de la aplicación.
