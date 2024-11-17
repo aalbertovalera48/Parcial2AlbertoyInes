@@ -105,32 +105,32 @@ Especializada para trabajar con la entidad Usuario.
 
 ## Archivos de Configuración
 
-### `application.properties`
+#### `application.properties`
 Contiene configuraciones de la aplicación, como la base de datos, el servidor RabbitMQ, y Thymeleaf.
 
-### `data.sql`
+#### `data.sql`
 Script SQL para poblar la base de datos con datos iniciales.
 
 ## Plantillas HTML
 
-### `home.html`
+#### `home.html`
 Página de inicio con enlaces a la simulación, login y registro.
 
-### `login.html`
+#### `login.html`
 Formulario de login para usuarios.
 
-### `registro.html`
+#### `registro.html`
 Formulario de registro para nuevos usuarios.
 
-### `simulacion.html`
+#### `simulacion.html`
 Página para visualizar la simulación del tablero de Galton.
 
-### `visualizacion.html`
+#### `visualizacion.html`
 Página para la visualización en tiempo real de la caída de bolas.
 
-### `error.html`
+#### `error.html`
 Página de error para manejar rutas no encontradas.
 
-### `fragments.html`
+#### `fragments.html`
 Fragmentos reutilizables de HTML para la cabecera y scripts.
 
