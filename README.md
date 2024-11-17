@@ -1,9 +1,9 @@
 # Título: La Operación de Galton en la Fábrica de Campanas de Gauss
 ## Hecho por Alberto Valera y Inés Elena Gómez 
-### Link repositorio GitGub: https://github.com/aalbertovalera48/Parcial1AlbertoyInes.git
+### Link repositorio GitGub: https://github.com/aalbertovalera48/Parcial2AlbertoyInes.git
 
 El proyecto se separa por una carpeta java y una resources:
-En la carpeta java 9 packages :
+En la carpeta java 10 packages :
 ## CampanaGauss
 ### Clase Componente 
 - Clase que modela un componente producido por las estaciones de trabajo.
@@ -115,6 +115,15 @@ En la carpeta java 9 packages :
 - Esta clase es el punto de entrada que inicia la aplicación, configurando el contexto de Spring y comenzando a escuchar las solicitudes en el servidor.
 ### Parcial1Application
 - La clase Parcial1Application está anotada con @SpringBootApplication, lo que indica que es una clase de configuración de Spring Boot.
+
+## Parcial2
+
+### PelotaConsumer
+### PelotaProducer
+### SimulacionController
+### SimulacionGaltonVista
+### VisualizacionController
+### VisualizacionDistribucion 
 
 ## Services
 - Este paquete contiene la clase UsuarioService, que maneja la lógica de negocio relacionada con los usuarios de la aplicación.
