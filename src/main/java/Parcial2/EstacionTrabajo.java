@@ -1,3 +1,4 @@
+package Parcial2;
 
 import CampanaGauss.Componente;
 import jakarta.annotation.PostConstruct;
@@ -6,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import reactor.core.publisher.Flux;
 import reactor.core.scheduler.Schedulers;
-
 
 import java.time.Duration;
 @Component

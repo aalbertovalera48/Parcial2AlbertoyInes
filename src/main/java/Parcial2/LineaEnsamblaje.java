@@ -1,3 +1,5 @@
+package Parcial2;
+
 import CampanaGauss.Componente;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;

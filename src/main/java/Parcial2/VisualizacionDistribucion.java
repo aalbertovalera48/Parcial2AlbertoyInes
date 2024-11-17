@@ -1,8 +1,11 @@
 package Parcial2;
 
+import org.springframework.stereotype.Component;
+
 import javax.swing.*;
 import java.awt.*;
 
+@Component
 public class VisualizacionDistribucion extends JPanel {
     private final int[] bins;
     private int maxValue;
@@ -14,11 +17,9 @@ public class VisualizacionDistribucion extends JPanel {
     }
 
     public void actualizarDistribucion(int bin) {
-        if (bin >= 0 && bin < bins.length) {
-            bins[bin]++;
-            maxValue = Math.max(maxValue, bins[bin]);
-            repaint();
-        }
+        bins[bin]++;
+        maxValue = Math.max(maxValue, bins[bin]);
+        repaint();
     }
 
     @Override

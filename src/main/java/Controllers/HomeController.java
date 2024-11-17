@@ -22,10 +22,15 @@ public class HomeController {
         model.addAttribute("registroData", new RegistroData());
         return "registro";
     }
+    @GetMapping("/visualizacion")
+    public String visualizacion(Model model) {
+        return "visualizacion";
+    }
 
     @GetMapping("/simulacion")
-    public String simulacion (Model model) {
+    public String simulacion(Model model) {
         return "simulacion";
     }
+
 
 }
