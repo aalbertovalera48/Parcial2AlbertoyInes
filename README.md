@@ -157,9 +157,9 @@ Clase principal que configura y ejecuta la simulación enviando mensajes a una c
 
 - **main(String[] args)**: Método principal que inicia la aplicación, configura el contexto de Spring, envía mensajes a la cola `simulacionQueue` y mantiene el contexto de la aplicación abierto.
 
-## Métodos
+# Métodos
 
-### `main(String[] args)`
+ `main(String[] args)`
 - **Descripción**: Método principal que configura el contexto de Spring, envía mensajes a la cola `simulacionQueue` y mantiene el contexto de la aplicación abierto.
 - **Parámetros**: `String[] args` - Argumentos de línea de comandos.
 - **Lógica**:
