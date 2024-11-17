@@ -118,19 +118,56 @@ En la carpeta java 10 packages :
 
 ## Parcial2
 
+### EstacionTrabajo
+Clase que representa una estación de trabajo que produce componentes y los envía a una cola de RabbitMQ.
+
+- **EstacionTrabajo(String tipoComponente, String queueName)**: Constructor que inicializa la estación de trabajo con el tipo de componente y el nombre de la cola.
+- **startProducing()**: Método que inicia la producción de componentes a intervalos regulares y los envía a la cola de RabbitMQ.
+
+### LineaEnsamblaje
+Clase que representa una línea de ensamblaje que consume componentes de una cola de RabbitMQ y los ensambla.
+
+- **consumeComponent(Componente componente)**: Método que consume un componente de la cola `ensamblajeQueue`, simula el tiempo de ensamblaje y muestra mensajes de estado.
+  
 ### PelotaConsumer
 Consume mensajes de la cola de RabbitMQ y actualiza la distribución de las bolas.
+
 - **consumeMessage(String message)**: Consume un mensaje de la cola `simulacionQueue` y actualiza la distribución de las bolas.
 - **updateDistribution(int bin)**: Actualiza la distribución de las bolas en los contenedores.
   
 ### PelotaProducer
 Produce y envía mensajes a la cola de RabbitMQ.
+
 - **sendBallMessage(int ballNumber)**: Envía un mensaje con el número de bola a la cola `simulacionQueue`.
-  
+
+### RabbitMQConfig
+Clase de configuración de RabbitMQ.
+
+- **simulacionQueue()**: Método que define la cola `simulacionQueue`.
+- **connectionFactory()**: Método que configura la conexión a RabbitMQ.
+- **rabbitTemplate(CachingConnectionFactory connectionFactory)**: Método que crea una instancia de `RabbitTemplate` con la conexión configurada.
+
 ### SimulacionController
 - Controlador REST que inicia la simulación enviando mensajes a la cola de RabbitMQ.
-- **simular(int numBalls)**: Endpoint que inicia la simulación enviando el número especificado de bolas a la cola `simulacionQueue`.
   
+- **simular(int numBalls)**: Endpoint que inicia la simulación enviando el número especificado de bolas a la cola `simulacionQueue`.
+
+### SimulacionGalton2
+Clase principal que configura y ejecuta la simulación enviando mensajes a una cola de RabbitMQ.
+
+- **main(String[] args)**: Método principal que inicia la aplicación, configura el contexto de Spring, envía mensajes a la cola `simulacionQueue` y mantiene el contexto de la aplicación abierto.
+
+## Métodos
+
+### `main(String[] args)`
+- **Descripción**: Método principal que configura el contexto de Spring, envía mensajes a la cola `simulacionQueue` y mantiene el contexto de la aplicación abierto.
+- **Parámetros**: `String[] args` - Argumentos de línea de comandos.
+- **Lógica**:
+  - Configura el contexto de Spring con `RabbitMQConfig`.
+  - Obtiene una instancia de `RabbitTemplate`.
+  - Envía 1000 mensajes a la cola `simulacionQueue`, representando la caída de bolas.
+  - Mantiene el contexto de la aplicación abierto para permitir la visualización continua.
+    
 ### SimulacionGaltonVista
 Clase principal que configura y ejecuta la simulación gráfica.
 - **main(String[] args)**: Método principal que inicia la aplicación y configura la interfaz gráfica.
